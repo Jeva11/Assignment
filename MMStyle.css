@@ -6,71 +6,73 @@ body {
     margin: 0 auto;
     max-width: 375px;
 }
+
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background: linear-gradient(to right, #020873, #020803);
+    background: linear-gradient(to right, #020873, #020803); /* Gradient background */
     color: white;
-    position: relative;
+    padding: 10px;
+    position: relative; /* Ensure relative positioning for absolute children */
 }
-h1 {
+
+#menu-label {
     margin: 0;
-    text-align: center;
-    font-size: 1.25em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    cursor: pointer;
+    position: relative; /* Ensure it's positioned relative for absolute positioning of .nav-menu */
 }
+
+.hidden-checkbox {
+    display: none; /* Hide the checkbox visually */
+}
+
+.nav-menu {
+    display: none; /* Hide the nav menu by default */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: calc(100% + 10px); /* Align to the right of the label with some spacing */
+    background-color: #020873; /* Match header background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+}
+
+#menu-toggle:checked + #menu-label + .nav-menu {
+    display: block; /* Display the nav menu when checkbox is checked */
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    padding: 10px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+}
+
+.nav-menu li img {
+    max-width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center align image */
+}
+
+.nav-menu li:hover {
+    background-color: #590242;
+}
+
 h2, h3, p, dd, dl {
     font-size: 1em;
 }
+
 footer p {
     font-size: 0.75em;
 }
-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to right, #020873, #020803);
-    display: none;
-    flex-direction: column;
-}
-nav input[type="checkbox"] {
-    display: none;
-}
-nav input[type="checkbox"]:checked ~ ul {
-    display: flex;
-}
-nav label {
-    cursor: pointer;
-    margin-left: auto;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    flex-direction: column;
-}
-nav li {
-    padding: 10px;
-    text-align: center;
-}
-nav li:first-child {
-    font-variant: small-caps;
-}
-nav li:hover:not(:first-child) {
-    background-color: #590242;
-}
-nav img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-}
+
 .content {
     padding: 10px;
     background-color: white;
