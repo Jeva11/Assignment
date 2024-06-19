@@ -8,27 +8,28 @@
 </head>
 <body>
     <header>
-        <label for="menu-toggle" id="menu-label">MuzakMaker</label>
-        <input type="checkbox" id="menu-toggle" class="hidden-checkbox">
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#">MuzakMaker</a></li>
-                <li><a href="#">Trending Songs</a></li>
-                <li><a href="#">Your playlists</a></li>
-                <li><a href="#">Curated Playlists</a></li>
-                <li><img src="duke-silver.png" alt="Duke Silver"></li>
-            </ul>
-        </nav>
+        <div class="dropdown">
+            <a href="#" class="dropdown-label">
+                <span class="first-m">M</span>uzak<span class="second-m">M</span>aker</a>
+            <div class="dropdown-content">
+                <ul class="menu">
+                    <li><a href="#">TRENDING SONGS</a></li>
+                    <li><a href="#">YOUR PLAYLISTS</a></li>
+                    <li><a href="#">CURATED PLAYLISTS</a></li>
+                    <li><img src="duke-silver.png" alt="Duke Silver"></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main class="content">
         <section class="gradient-background">
             <h2>Smooth Jazz</h2>
             <p>This station is dedicated to the soothing sounds of smooth jazz. This genre of commercially oriented crossover jazz became dominant in the 1980s and early 1990s.</p>
         </section>
-        <section>
-            <h3>Trending Songs</h3>
+        <section class="trending-songs-section">
+            <h3 class="trending-songs-heading">Trending Songs</h3>
             <div class="audio-section">
-                <div class="audio-item" style="background-image: url('aloma-cover.png');">
+                <div class="audio-item" style="background-image: url('images/aloma-cover.png');">
                     <div class="info">
                         <h4>Aloma</h4>
                         <p>Cali</p>

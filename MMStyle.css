@@ -1,72 +1,100 @@
 html {
     background-color: #020659;
-    font-family: Verdana, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
 }
 body {
     margin: 0 auto;
     max-width: 375px;
 }
 
-
 header {
-    background: linear-gradient(to right, #020873, #020803); /* Gradient background */
+    background:#020873; /* Gradient background */
     color: white;
     padding: 10px;
     position: relative; /* Ensure relative positioning for absolute children */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#menu-label {
-    margin: 0;
+.dropdown {
+    position: relative;
+}
+
+.dropdown-label {
     cursor: pointer;
-    position: relative; /* Ensure it's positioned relative for absolute positioning of .nav-menu */
+    padding: 2px;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: Tahoma, Verdana, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none; /* Remove default underline */
+    color: white; /* Text color */
+    display: inline-block; /* Ensure it behaves like a block-level element */
 }
 
-.hidden-checkbox {
-    display: none; /* Hide the checkbox visually */
+.first-m, .second-m {
+    font-size: 1.8em; /* Increase the size of the M's */
+    font-weight: bold; /* Optionally make the M's bold */
 }
 
-.nav-menu {
-    display: none; /* Hide the nav menu by default */
+.dropdown-content {
     position: absolute;
-    top: 100%; /* Position below the header */
-    left: calc(100% + 10px); /* Align to the right of the label with some spacing */
-    background-color: #020873; /* Match header background */
+    background-color: transparent; /* Match header background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
+    z-index: 10; /* Ensure menu appears above other content */
+    display: none; /* Hide the nav menu by default */
+    text-align: center;
+    justify-content: space-around;
+    overflow: hidden;
+   
 }
 
-#menu-toggle:checked + #menu-label + .nav-menu {
-    display: block; /* Display the nav menu when checkbox is checked */
+.dropdown:hover .dropdown-content {
+    display: inline-block; 
+    vertical-align: top;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 300%;
+    /* Display the nav menu when dropdown is hovered */
 }
 
-.nav-menu ul {
+.menu {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.nav-menu li {
-    padding: 10px;
+.menu li {
+    display: inline-block; 
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center align vertically */
+    align-items: center;
+    margin-right: 10px;
+    width: 20%;
+    Font-family: tahoma, sans-serif; 
+    font-size: 1em;
 }
 
-.nav-menu li a {
+.menu li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
     display: block;
 }
 
-.nav-menu li img {
+.menu li img {
     max-width: 100px; /* Adjust as needed */
     height: auto; /* Maintain aspect ratio */
     display: block;
     margin: 0 auto; /* Center align image */
 }
 
-.nav-menu li:hover {
+.menu li:hover {
     background-color: #590242;
-}
-
-h2, h3, p, dd, dl {
-    font-size: 1em;
 }
 
 footer p {
@@ -78,10 +106,48 @@ footer p {
     background-color: white;
     color: black;
 }
+
+
+
 section.gradient-background {
     background: linear-gradient(to right, #2104d9, black);
     color: white;
 }
+
+.gradient-background {
+    background: linear-gradient(to right, #2104d9, black); /* Gradient from left (#2104d9) to right (black) */
+    color: #ffffff; /* Text color */
+    padding: 10px; /* Adjust padding as needed */
+    margin: -10px -10px 0;
+}
+
+.gradient-background h2 {
+    font-size: 1.5em; /* Example font size for h2 */
+    text-transform: uppercase; /* Transform text to uppercase */
+    font-family: Verdana, sans-serif; 
+    font-weight: bold;/* Example font family */
+    margin-top: 0; /* Remove default margin */
+    margin-left: 25px;
+}
+
+.gradient-background p {
+
+    font-size: 1em; /* Example font size for paragraphs */
+    line-height: 1.5; 
+    margin-left: 25px; /* Example line height */
+    margin-top: -10px;
+}
+
+.trending-songs-heading {
+    font-size: larger;
+    font-family: verdana bold, !important;
+    color: #590242;
+    text-transform: uppercase;
+    letter-spacing: -.025em; /* Example color *//* Example font family */
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
 .audio-section {
     display: flex;
     overflow-x: scroll;
