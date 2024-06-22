@@ -6,21 +6,21 @@ body {
     margin: 0 auto;
     max-width: 375px;
 }
-
 header {
-    background:#020873; /* Gradient background */
+    background:#020873; 
     color: white;
     padding: 10px;
-    position: relative; /* Ensure relative positioning for absolute children */
+    position: relative; 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
+.hamburger-menu {
+    cursor: pointer;
+}
 .dropdown {
     position: relative;
 }
-
 .dropdown-label {
     cursor: pointer;
     padding: 2px;
@@ -28,37 +28,32 @@ header {
     font-size: 1.5em;
     font-family: Tahoma, Verdana, sans-serif;
     text-transform: uppercase;
-    text-decoration: none; /* Remove default underline */
-    color: white; /* Text color */
-    display: inline-block; /* Ensure it behaves like a block-level element */
+    text-decoration: none;
+    color: white; 
+    display: inline-block; 
 }
-
 .first-m, .second-m {
-    font-size: 1.8em; /* Increase the size of the M's */
-    font-weight: bold; /* Optionally make the M's bold */
+    font-size: 1.8em; 
+    font-weight: bold; 
 }
-
 .dropdown-content {
     position: absolute;
-    background-color: transparent; /* Match header background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for depth */
-    z-index: 10; /* Ensure menu appears above other content */
-    display: none; /* Hide the nav menu by default */
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 10;
+    display: none; 
     text-align: center;
     justify-content: space-around;
     overflow: hidden;
    
 }
-
 .dropdown:hover .dropdown-content {
     display: inline-block; 
     vertical-align: top;
     display: inline-flex;
     justify-content: space-around;
     width: 300%;
-    /* Display the nav menu when dropdown is hovered */
 }
-
 .menu {
     list-style: none;
     padding: 0;
@@ -66,179 +61,593 @@ header {
     display: flex;
     flex-wrap: nowrap;
 }
-
 .menu li {
     display: inline-block; 
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center align vertically */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
     align-items: center;
     margin-right: 10px;
     width: 20%;
     Font-family: tahoma, sans-serif; 
     font-size: 1em;
 }
-
 .menu li a {
     color: white;
     text-decoration: none;
     font-size: 1.2em;
     display: block;
 }
-
 .menu li img {
-    max-width: 100px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100px; 
+    height: auto; 
     display: block;
-    margin: 0 auto; /* Center align image */
+    margin: 0 auto; 
 }
-
 .menu li:hover {
     background-color: #590242;
 }
-
-footer p {
-    font-size: 0.75em;
-}
-
-.content {
-    padding: 10px;
-    background-color: white;
-    color: black;
-}
-
-
-
-section.gradient-background {
-    background: linear-gradient(to right, #2104d9, black);
-    color: white;
-}
-
 .gradient-background {
-    background: linear-gradient(to right, #2104d9, black); /* Gradient from left (#2104d9) to right (black) */
-    color: #ffffff; /* Text color */
-    padding: 10px; /* Adjust padding as needed */
-    margin: -10px -10px 0;
+    background: linear-gradient(to right, #2104d9, black); 
+    color: #ffffff; 
+    padding: 10px; 
+    margin: auto;
 }
-
 .gradient-background h2 {
-    font-size: 1.5em; /* Example font size for h2 */
-    text-transform: uppercase; /* Transform text to uppercase */
+    font-size: 1.5em; 
+    text-transform: uppercase; 
     font-family: Verdana, sans-serif; 
-    font-weight: bold;/* Example font family */
-    margin-top: 0; /* Remove default margin */
+    font-weight: bold;
+    margin-top: 0; 
     margin-left: 25px;
 }
-
 .gradient-background p {
-
-    font-size: 1em; /* Example font size for paragraphs */
+    font-size: 1em; 
     line-height: 1.5; 
-    margin-left: 25px; /* Example line height */
+    margin-left: 25px; 
     margin-top: -10px;
 }
-
-.trending-songs-heading {
-    font-size: larger;
-    font-family: verdana bold, !important;
+main {
+    background-color: #FFFFFF;
+    margin: 0px;
+}
+#trending h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
+    color: #590242;
+    margin: 20px 0px -20px 25px;
+    text-transform: uppercase;
+    padding-top: 50px;
+}
+.scroll {
+    display: flex;
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    padding: 10px;
+    height: 100%; 
+}
+.scroll section {
+    margin:10px;
+    position: relative;
+}
+.scroll div {
+    position: absolute;
+    top:251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+div h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: 700;
+    font-size: 15pt;
     color: #590242;
     text-transform: uppercase;
-    letter-spacing: -.025em; /* Example color *//* Example font family */
-    margin-top: 50px;
-    margin-left: 25px;
+    margin: 5px 5px 0px 10px;
 }
-
-.audio-section {
-    display: flex;
-    overflow-x: scroll;
-}
-.audio-item {
-    position: relative;
-    margin-right: 10px;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-}
-.audio-item .info {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 5px;
-}
-.audio-item .info h4, .audio-item .info p {
-    margin: 0;
+dt, dd {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-size: 15pt;
     color: #590242;
 }
-.scroll-button {
-    display: block;
-    margin: 10px auto;
-    text-align: center;
-    background-color: #590242;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+dt {
+    font-style: italic;
+    font-weight: 100;
 }
-.scroll-button:hover {
+dd {
+    margin-left: 7.5px;
+}
+dl {
+    margin: auto;
+    margin-left: 10px;
+    display:flex;
+}
+audio {
+    position: absolute;
+    bottom: 150px;
+    left:5px;
+}
+.scroll::-webkit-scrollbar {
+    display: block;
+}
+.scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+    -webkit-box-shadow: inset 0 0 15px #590242;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #590242;
+    border-radius: 5px;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
     background-color: #020659;
 }
-.playlists {
+#trending {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
 }
-.playlist-column {
-    flex: 1;
-    padding: 10px;
-    background-color: white;
-    overflow-y: auto;
-    max-height: 300px;
+.trending-button-container {
+    margin-top: auto; 
+    align-self: flex-end; 
 }
 .playlist-item {
     display: flex;
-    margin-bottom: 10px;
+    gap: 20px; 
 }
 .playlist-item img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 100px; 
+    height: auto; 
+    border-radius: 5px;
 }
-.playlist-item .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.playlists-button-container, .curated-button-container {
+    margin-top: auto; 
+    align-self: flex-end; 
 }
-.playlist-item .text strong {
+.PushButton {
+    background-color: #590242;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding:10px;
+    width:150px;
+    display: block;
+    text-align: center;
+    margin: 10px 0 30px 32px; 
+    float: right;
+}
+.PushButton:hover {
+    background-color: #020659;
+}
+.playlists h2, .playlists2 h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: bold;
+    font-size: 14pt;
     color: #590242;
+    margin: 0px 0px 10px 25px;
+    text-transform: uppercase;
+    padding-top: 10px;
+ }
+.columncombine {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 500px 75px;
 }
-.playlist-item .text p {
-    color: #590242;
+.scrollVert, .curatedscroll {
+    overflow-y: auto;
+    max-height: 400px;
 }
-.playlist-column::-webkit-scrollbar {
+.scrollVert, .curatedscroll  {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.scrollVert {
+    background-color: #2699FB;
+}
+.scrollVert section {
+    background-color: #0D8DFB;
+    text-align: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+}
+.scrollVert img {
+    border-radius: 5px;
+    margin: auto;
+}
+.scrollVert section:hover {
+    background-color: #590242;
+}
+.scrollVert h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin: 5px;
+}
+.scrollVert p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: 400;
+    font-size: 12pt;
+    color: #FFFFFF;
+    margin: 5px;
+}
+.curatedscroll {
+    background-color: #030A8C;
+}
+.curatedscroll section {
+    background-color: #020873;
+    text-align: center;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+}
+.curatedscroll img{
+    border-radius: 5px;
+    margin: auto;
+}
+.curatedscroll section:hover {
+    background-color: #590242;
+}
+.curatedscroll h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin: 5px;
+}
+.curatedscroll p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-weight: normal;
+    font-size: 12pt;
+    color: #FFFFFF;
+    margin: 5px;
+}
+.scrollVert::-webkit-scrollbar, .curatedscroll::-webkit-scrollbar {
+    display: block;
     width: 12px;
 }
-.playlist-column::-webkit-scrollbar-track {
-    background: #0D8DFB;
+.scrollVert::-webkit-scrollbar-track, .curatedscroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
 }
-.playlist-column::-webkit-scrollbar-thumb {
+.scrollVert::-webkit-scrollbar-thumb, .curatedscroll::-webkit-scrollbar-thumb {
     background-color: #020659;
-    border-radius: 20px;
-    border: 3px solid #0D8DFB;
+    border-radius: 5px;
+}
+.scrollVert::-webkit-scrollbar-thumb:hover, .curatedscroll::-webkit-scrollbar:hover {
+    background-color: #FFFFFF;
 }
 footer {
+    clear: both;
+    font-family: Verdana, Tahoma, sans-serif, sans-serif;
+    font-weight: bold;
     text-align: center;
-    padding: 10px;
-    background-color: #020659;
     color: #590242;
+    margin-top: -80px;
+    background-color: #FFFFFF
 }
-@media (min-width: 834px) {
+#menu-toggle {
+    display: none; 
+}
+.mobile-menu {
+    display: none;
+}
+
+
+
+
+@media only screen and (min-width: 834px) {
+  
+    .mobile-menu {
+        display: none; 
+    }
+}
+
+@media only screen and (max-width: 375px) {
     body {
+        max-width: 375px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (min-width: 834px) {
+    body {
+        margin: 0 auto;
         max-width: 834px;
     }
     .audio-section {
         overflow-x: hidden;
+    }
+}
+
+
+@media only screen and (min-width: 834px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .desktop-menu {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+        font-family: Verdana, Tahoma, sans-serif;
+        background-color: #020659;
+        color: white;
+        margin: 0;
+        padding: 0;
+        text-align: center; 
+    }
+
+    header {
+        background: #020873;
+        padding: 10px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .hamburger-menu {
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 1.5em;
+    }
+
+    .dropdown-label {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        pointer-events: none; 
+    }
+
+    .dropdown-content {
+        background-color: #020873;
+        min-width: 20px; 
+        max-width: 100px;
+        left: 0;
+        top: calc (100% + 5);
+        text-align: center;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    #trending {
+        padding: 20px;
+    }
+
+    main {
+        margin: 0 auto;
+        max-width: 375px;
+        padding: 0px;
+    }
+
+    section {
+        margin-bottom: 20px;
+        text-align: left; 
+    }
+
+    #trending {
+        padding: 20px;
+    }
+    .scroll {
+        display:flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap; 
+        padding: 10px;
+
+        -webkit-overflow-scrolling: touch; /* A nice to have for mobiel anything */
+    }
+
+    .scroll .scroll-section {
+        position: relative;
+        min-width: 100%;
+        max-width: 100%;
+        margin-right: 10px;
+        flex: 0 0 auto;
+    }
+
+    .scroll section {
+        position: relative;
+        min-width: 100%;
+        max-width: 100%;
+        margin-right: 10px;
+        flex: 0 0 auto;
+    }
+
+    .scroll img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .scroll h3, .scroll dl {
+        position: aboslute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(255,255,255,.75);
+        margin: 0;
+        padding: 5px;
+        box-sizing: border-box;
+
+    } 
+
+    .scroll h3 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+        font-weight: 700;
+        font-size: 15pt;
+        color: #590242;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 5px 10px;
+    }
+
+    .scroll dl {
+        font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+        font-size: 12pt;
+        color: #590242;
+        margin: 0;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: column;/
+    }
+
+    .scroll dt {
+        font-style: italic;
+        font-weight: 100;
+    }
+
+    .scroll dd {
+        margin-left: 7.5ps;
+    }
+
+    .scroll audio {
+        width: 95%;
+        margin: -40px auto;
+    }
+
+    .trending-button-container {
+        margin-top: auto;
+        align-self: flex-start;
+        margin-right: 10px;
+    }
+
+
+    footer {
+        font-weight: bold;
+        text-align: center;
+        color: #590242;
+        margin-top: 20px; 
+        background-color: #FFFFFF;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+
+    }
+
+    .columncombine {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .playlists, .plyaylists2 {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .scrollVert, .curatedscroll {
+        overflow-y: auto;
+        width: 100%;
+        max-height: 400px;
+        
+    }
+
+    .scrollVert, .curatedscroll {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .scrollHoriz {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .scrollHoriz section {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+
+    .scrollHoriz img {
+        max-width: 100px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .playlists, .curated {
+        margin: 0 auto;
+        max-width: 375px;
+    }
+
+    .playlists h2, .curated h2 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+        font-weight: bold;
+        font-size: 14pt;
+        color: #590242;
+        margin: 0px 0px 10px 25px;
+        text-transform: uppercase;
+        padding-top: 10px;
+    }
+
+    .playlists-button-container, .curated-button-container {
+        margin-top: auto; 
+        align-self: flex-start;
+        margin-left: 10px;
+    }
+
+    .PushButton {
+        background-color: #590242;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        width: 150px;
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+        clear: both; 
+    }
+
+
+}
+
+/*Seems a little redundant, but couldn't figure out how to get the .columncombine section to diplay vertical on mobile without it.* The 768px is becuase on certain mobiles it would look fine, but when I tested
+it on other mobile versions some of the formatting just disappeared despite whatever media query I gave it */
+
+@media only screen and (max-width: 768px) {
+   
+    .columncombine {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
+        gap: 10px; 
+    }
+
+    .scrollVert, .curatedscroll {
+        max-height: none; 
+        overflow-y: visible; 
+    }
+
+    .playlists, .playlists2, .curated {
+        max-width: 100%; 
     }
 }
